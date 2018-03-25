@@ -16,12 +16,12 @@ def cosine_similarity(x,y):
 
 
 def similarity(img1, img2, w, h, nb_bins, metric):
-    '''Computes similarity between image 1 and image 2. Image 1 is taken has reference'''
+    '''Computes similarity between image 1 and image 2'''
 
     hog_similar_1 = HOG(img1,w,h,nb_bins,False)
     hog_similar_2 = HOG(img2,w,h,nb_bins,False)
 
-    I,J,k = np.shape(hog_similar_1)  #Object 1 is used as reference
+    I,J,k = np.shape(hog_similar_1)
 
     metric_values = np.zeros((I,J))
 
@@ -39,11 +39,11 @@ if __name__=="__main__":
 
     from skimage import io
 
-    img_similar = io.imread('HOG 2/hog_similar.bmp')
+    img_similar = io.imread('HOG 2/hog_similar2.bmp')
     img_similar_1 = img_similar[22:,0:64]
     img_similar_2 = img_similar[22:,90:154]
 
-    img_different = io.imread('HOG 2/hog_different.bmp')
+    img_different = io.imread('HOG 2/hog_different2.bmp')
     img_different_1 = img_different[22:,0:64]
     img_different_2 = img_different[22:,90:154]
 
