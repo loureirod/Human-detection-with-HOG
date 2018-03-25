@@ -38,7 +38,7 @@ To get HOG representation an image should be divided in cells. The size of the c
 
 <p align="center">
   <img src="Figures/HOG.png" width="700"/>
-  <p align="center">30x30 pixels grid</p>
+  <p align="center">Histogram of Orientation Gradients</p>
 </p>
 
 
