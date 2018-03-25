@@ -33,14 +33,18 @@ def similarity(img1, img2, w, h, nb_bins, metric):
     I,J,k = np.shape(hog_similar_1)
     metric_values = np.zeros((I,J))
 
-    # Computation of similarity 
+    # Computation of similarity
+ 
+    concatened_hog1 = []
+    concatened_hog2 = []
+
     for i in range(I):
         for j in range(J):
-            metric_values[i,j] = metric(hog_similar_1[i][j], hog_similar_2[i][j])
+            concatened_hog1 = np.concatenate(( concatened_hog1 , hog_similar_1[i][j] ))
+            concatened_hog2 = np.concatenate(( concatened_hog2 , hog_similar_2[i][j] ))
+    
 
-    result = np.mean(metric_values)
-
-    return result
+    return metric(concatened_hog1,concatened_hog2) # This is similarity value
 
 
 # Examples
