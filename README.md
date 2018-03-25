@@ -18,7 +18,7 @@ For HOG representation Gradient orientation value is needed for every pixel. The
 
 To get HOG representation an image should be divided in cells. The size of the cells directly impacts the accuracy of the prediction and the computation cost. The histogram is then calculated over the gradient orientation obtained before for each cell.
 
-## Exemple
+## Example
 
 <p align="center">
   <img src="Figures/car1.bmp" width="350"/>
@@ -27,8 +27,20 @@ To get HOG representation an image should be divided in cells. The size of the c
 
 
 <p align="center">
-  <img src="Figures/gradients.png" width="350"/>
+  <img src="Figures/gradients.png" width="700"/>
   <p align="center">Result of gradient orientation computation</p>
 </p>
+
+<p align="center">
+  <img src="Figures/grid.png" width="700"/>
+  <p align="center">30x30 pixels grid</p>
+</p>
+
+<p align="center">
+  <img src="Figures/HOG.png" width="700"/>
+  <p align="center">30x30 pixels grid</p>
+</p>
+
+
 
 
