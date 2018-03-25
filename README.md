@@ -18,3 +18,5 @@ For HOG representation Gradient orientation value is needed for every pixel. The
 
 To get HOG representation an image should be divided in cells. The size of the cells directly impacts the accuracy of the prediction and the computation cost. The histogram is then calculated over the gradient orientation obtained before for each cell.
 
+
+![Scheme](Figures/car1.bmp "Title")
