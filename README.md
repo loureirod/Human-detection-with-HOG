@@ -47,7 +47,7 @@ orientation in [0,180] are in yellow and those in [180,360] are in blue)</p>
 ### Human detection
 
 Human detection with HOG is performed by computing *similarity* between an unknow image and a human image.
-Bellow are the similarities computed for the following objects. The metric used for similarity computation is here the *cosine similarity* with is equal for two vector A and B to A.B / ||A||.||B||
+Bellow are the similarities computed for the following objects. The metric used for similarity computation is here the *cosine similarity* wich is equal, for two vector A and B, to A.B / ||A||.||B||
 
 <p align="center">
   <img src="Figures/hog_similar.bmp" width="700"/>
