@@ -58,7 +58,7 @@ Bellow are the similarities computed for the following objects. The metric used 
 
 <p align="center">
   <img src="Figures/hog_similar.bmp" width="500"/>
-  <p align="center">Similarity: 0.6</p>
+  <p align="center">Similarity: 0.67 (with 16x16 pixels cells and 9 bins)</p>
 </p>
 
 
@@ -67,7 +67,7 @@ Bellow are the similarities computed for the following objects. The metric used 
 
 <p align="center">
   <img src="Figures/hog_different.bmp" width="500"/>
-  <p align="center">Similarity: 0.4</p>
+  <p align="center">Similarity: 0.47 (with 16x16 pixels cells and 9 bins)</p>
 </p>
 
 
