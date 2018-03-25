@@ -28,7 +28,8 @@ To get HOG representation an image should be divided in cells. The size of the c
 
 <p align="center">
   <img src="Figures/gradients.png" width="700"/>
-  <p align="center">Result of gradient orientation computation</p>
+  <p align="center">Result of gradient orientation computation (On 4th figure all pixels with gradient
+orientation in [0,180] are in yellow and those in [180,360] are in blue)</p>
 </p>
 
 <p align="center">
