@@ -50,12 +50,12 @@ Human detection with HOG is performed by computing *similarity* between an unkno
 Bellow are the similarities computed for the following objects. The metric used for similarity computation is here the *cosine similarity* wich is equal, for two vector A and B, to A.B / ||A||.||B||
 
 <p align="center">
-  <img src="Figures/hog_similar.bmp" width="700"/>
+  <img src="Figures/hog_similar.bmp" width="500"/>
   <p align="center">Similarity: 0.6</p>
 </p>
 
 <p align="center">
-  <img src="Figures/hog_different.bmp" width="700"/>
+  <img src="Figures/hog_different.bmp" width="500"/>
   <p align="center">Similarity: 0.4</p>
 </p>
 
