@@ -78,18 +78,27 @@ def HOG(raw_image,w=30,h=30,nb_bins=9,plot=False):
         #--Ploting image--
 
         fig1 = plt.figure()
-        ax1 = fig1.add_subplot(231)
-        ax2 = fig1.add_subplot(232)
-        ax3 = fig1.add_subplot(233)
-        ax4 = fig1.add_subplot(234)
-        ax5 = fig1.add_subplot(235)
+        # ax1 = fig1.add_subplot(221)
+        ax2 = fig1.add_subplot(221)
+        ax3 = fig1.add_subplot(222)
+        ax4 = fig1.add_subplot(223)
+        ax5 = fig1.add_subplot(224)
 
 
-        ax1.imshow(raw_image,cmap="gray")
+        # ax1.imshow(raw_image,cmap="gray")
         ax2.imshow(Ix,cmap="gray")
         ax3.imshow(Iy,cmap="gray")
         ax4.imshow(G,cmap="gray")
         ax5.imshow(Bg)
+
+        ax2.set_title('Gradient according to x')
+        ax3.set_title('Gradient according to y')
+        ax4.set_title('Magnitude of the gradient')
+        ax5.set_title('Gradient orientation classification')
+
+        
+        
+        
 
         #--Grid Plot--
 
