@@ -13,7 +13,7 @@ def HOG(raw_image,w=30,h=30,nb_bins=9,plot=False):
 
     ##--Computation--
 
-    raw_image = raw_image/255
+    raw_image = raw_image/255 #Pixel values are mapped from [0,255] to [0,1] 
 
     #--Convolution--
 
