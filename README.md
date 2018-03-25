@@ -18,7 +18,9 @@ For HOG representation Gradient orientation value is needed for every pixel. The
 
 To get HOG representation an image should be divided in cells. The size of the cells directly impacts the accuracy of the prediction and the computation cost. The histogram is then calculated over the gradient orientation obtained before for each cell.
 
-## Example
+## Examples
+
+### HOG computation
 
 <p align="center">
   <img src="Figures/car1.bmp" width="350"/>
@@ -41,6 +43,22 @@ orientation in [0,180] are in yellow and those in [180,360] are in blue)</p>
   <img src="Figures/HOG.png" width="700"/>
   <p align="center">Histogram of Orientation Gradients</p>
 </p>
+
+### Human detection
+
+Human detection with HOG is performed by computing *similarity* between an unknow image and a human image.
+Bellow are the similarities computed for the following objects. The metric used for similarity computation is here the *cosine similarity* with is equal for two vector A and B to A.B / ||A||.||B||
+
+<p align="center">
+  <img src="Figures/hog_similar.bmp" width="700"/>
+  <p align="center">Similarity: 0.6</p>
+</p>
+
+<p align="center">
+  <img src="Figures/hog_different.bmp" width="700"/>
+  <p align="center">Similarity: 0.4</p>
+</p>
+
 
 
 
