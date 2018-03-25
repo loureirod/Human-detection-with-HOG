@@ -7,16 +7,18 @@ from math import floor
 
 
 def HOG(raw_image,w=30,h=30,nb_bins=9,plot=False):
+    '''Computes Histogram of Oriented Gradients of given image with \
+    cells of size w x h and nb_bins bins. If plot=True then gradient \
+    magnitude, grid and HOG will be plotted'''
 
-
-    ##--Computation--##
+    ##--Computation--
 
     raw_image = raw_image/255
 
     #--Convolution--
 
     def convolution(matrix,kernel):
-        '''Return convolution of 3x3 kernel over matrix. Doesn't handle borders'''
+        '''Return convolution of 3x3 kernel over matrix. Avoid matrix borders'''
 
         I,J = np.shape(matrix)
         result = np.copy(matrix)
@@ -43,7 +45,7 @@ def HOG(raw_image,w=30,h=30,nb_bins=9,plot=False):
     #--Orientation computation--
 
     def signed_gradient_orientation(Ix,Iy):
-        '''Return orientation in degrees for a signed gradient'''
+        '''Return signed gradient orientation in degrees'''
         teta = 180/np.pi * np.arctan2(Iy,Ix)
         if teta >= 0:
             return teta
@@ -58,7 +60,6 @@ def HOG(raw_image,w=30,h=30,nb_bins=9,plot=False):
     #--Cell Histogram calculation--
 
     H,W = np.shape(raw_image)
-
     I,J = floor(H/h)+1, floor(W/w)+1
 
     histograms = [[0]*J for k in range(I)]
@@ -68,37 +69,32 @@ def HOG(raw_image,w=30,h=30,nb_bins=9,plot=False):
             histograms[i][j] = np.histogram(teta[i*h:i*h + h, j*w:j*w + w],bins=nb_bins)[0]
 
 
-    ##--Plot--##
+    ##--Plot--
+    # Only executed if plot=True. Plots gradient magnitude, grid and HOG 
 
     if plot:
-        #--Gradient classification Plot--
+        #--Gradient classification--
 
-        Bg = np.where(teta <= 180, 1, 0)
+        Gc = np.where(teta <= 180, 1, 0)
 
         #--Ploting image--
 
         fig1 = plt.figure()
-        # ax1 = fig1.add_subplot(221)
         ax2 = fig1.add_subplot(221)
         ax3 = fig1.add_subplot(222)
         ax4 = fig1.add_subplot(223)
         ax5 = fig1.add_subplot(224)
 
-
-        # ax1.imshow(raw_image,cmap="gray")
         ax2.imshow(Ix,cmap="gray")
         ax3.imshow(Iy,cmap="gray")
         ax4.imshow(G,cmap="gray")
-        ax5.imshow(Bg)
+        ax5.imshow(Gc)
 
         ax2.set_title('Gradient according to x')
         ax3.set_title('Gradient according to y')
         ax4.set_title('Magnitude of the gradient')
         ax5.set_title('Gradient orientation classification')
-
-        
-        
-        
+  
 
         #--Grid Plot--
 
@@ -134,9 +130,11 @@ def HOG(raw_image,w=30,h=30,nb_bins=9,plot=False):
         plt.show()
 
 
+
     return histograms
 
 
+#--Example--
 if __name__=='__main__':
 
     w = int(input('Cell width: '))
